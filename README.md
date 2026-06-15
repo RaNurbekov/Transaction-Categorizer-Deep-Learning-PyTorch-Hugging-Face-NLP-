@@ -1,32 +1,33 @@
 # 💳 Bank Transaction NLP Categorizer
 
-Система автоматической категоризации "грязных" банковских транзакций (PFM - Personal Finance Management) с использованием Deep Learning. 
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.2+-ee4c2c.svg)](https://pytorch.org/)
+[![Transformers](https://img.shields.io/badge/Hugging%20Face-Transformers-orange.svg)](https://huggingface.co/transformers/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-ff4b4b.svg)](https://streamlit.io/)
 
-## 🛠 Стек технологий
+---
+
+## 🌍 English Version
+
+An automated Personal Finance Management (PFM) system designed to categorize "dirty" bank transaction strings using Deep Learning.
+
+### 🛠️ Tech Stack
 * **Deep Learning:** PyTorch, Hugging Face `transformers`, `datasets`
-* **Model:** `distilbert-base-multilingual-cased` (Fine-Tuning)
-* **Frontend:** Streamlit
-* **Data:** Синтетический датасет банковских чеков (генерация с шумом)
+* **Model:** `distilbert-base-multilingual-cased` (Fine-Tuned)
+* **Frontend UI:** Streamlit
+* **Data:** Synthetic dataset of raw bank receipts generated with realistic terminal noise.
 
-## ⚙️ Особенности проекта
-1. **Fine-Tuning Трансформеров:** Базовая многоязычная модель DistilBERT дообучена (Sequence Classification) на распознавание 5 банковских категорий (Транспорт, Супермаркеты, Подписки и т.д.).
-2. **Robustness (Устойчивость к шуму):** Модель успешно справляется с опечатками, латиницей, сокращениями и случайными цифрами (ID терминалов), выхватывая семантический контекст транзакции.
-3. **Inference UI:** Удобный веб-интерфейс на Streamlit для демонстрации предсказаний и вывода уверенности модели (Confidence Score).
+### ⚙️ Key Features
+* **Transformer Fine-Tuning:** A baseline multilingual DistilBERT model was fine-tuned for Sequence Classification to accurately recognize key spending categories.
+* **Robustness to Noise:** The model effectively handles typos, mixed scripts (Cyrillic/Latin), abbreviations, and random terminal metadata (IDs, locations), extracting the true semantic context.
+* **Inference UI:** A clean, user-friendly Streamlit web interface that showcases model predictions, top-5 probability distribution, and certainty flags (Confidence Score).
 
-## 🚀 Как запустить
-
-### 1. Подготовка
-Установите зависимости (потребуется PyTorch):
-```bash
-pip install -r requirements.txt
-2. Обучение (Fine-Tuning)
-Запустите пайплайн генерации данных и обучения модели (потребуется CPU/GPU):
-code
-Bash
-python src/train_nlp.py
-Веса обученной модели сохранятся в директорию models/transaction_nlp/.
-3. Запуск веб-витрины
-Для тестирования инференса запустите Streamlit:
-code
-Bash
-streamlit run app.py
+### 🗂️ Repository Structure
+```text
+├── .gitignore               # Excludes models, data, and cache files
+├── README.md                # Project documentation
+├── app.py                   # Main Streamlit UI application code
+├── requirements.txt         # Project package dependencies
+└── src/                     # Core source code directory
+    ├── __init__.py          # Makes src a Python package
+    └── train_nlp.py         # Pipeline for synthetic data generation & model training
