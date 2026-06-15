@@ -1,0 +1,28 @@
+# ── ML Models & Weights ─────────────────────────────────────
+# Игнорируем всю папку с моделями и любые возможные форматы весов
+models/
+*.safetensors
+*.bin
+*.pkl
+*.pt
+*.pth
+*.onnx
+
+# ── Python / IDE Garbage ────────────────────────────────────
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+.DS_Store
+
+# ── Local Automation Scripts ──────────────────────────────
+# Скрипты обслуживания (если ты точно не хочешь делиться ими на GitHub)
+check_size.py
+upload_model.py
+
+# ── Streamlit & Environment ─────────────────────────────────
+.streamlit/secrets.toml
+.env
+venv/
+.venv/
+env/

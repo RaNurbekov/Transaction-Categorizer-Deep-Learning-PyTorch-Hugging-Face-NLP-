@@ -1,0 +1,13 @@
+# ── Базовый веб-интерфейс ──────────────────────────────────
+streamlit>=1.35.0
+
+# ── Deep Learning & NLP (CPU-версии для серверов) ─────────
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch>=2.2.0
+transformers>=4.40.0
+
+# ── Интеграция с Hugging Face Hub ──────────────────────────
+huggingface_hub>=0.23.0
+
+# ── Визуализация данных ────────────────────────────────────
+plotly>=5.20.0
